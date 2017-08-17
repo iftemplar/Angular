@@ -2,6 +2,9 @@
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add server</button>
 
+<button class="btn btn-danger"
+    (click)="onDeleteServer()">Delete server</button>
+
 <p> {{ serverCreationStatus }} </p>
 <!-- String interpolation -->
 <!-- <p>{{ allowNewServer }}</p>  -->
