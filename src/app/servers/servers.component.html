@@ -9,13 +9,27 @@
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add server</button>
 <p>{{ allowNewServer }}</p> 
-<button class="btn btn-danger"
-    (click)="onDeleteServer()"
-    (contextmenu)="AlertContext()">Delete server</button>
 
 <textarea name=""
     id="" cols="30" rows="10"
     [disabled]="disableTextarea"></textarea>
+
+
+
+
+<div class="checkbox">
+    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 1</label>
+    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 2</label>
+    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 3</label>
+</div>
+<button type="button" class="btn btn-info" (click)="selectOption()">Select all options</button>
+
+
+
+
+
+
+
 
 <p> {{ serverCreationStatus }} </p>
 <!-- String interpolation -->

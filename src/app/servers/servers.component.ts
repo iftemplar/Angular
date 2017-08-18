@@ -14,6 +14,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   disableTextarea = false;
   serverCreationStatus = 'No server was created !';
+  optionToBeSelected = false;
 
   // constructor() { 
   //   console.log('settimeout');  
@@ -57,7 +58,9 @@ export class ServersComponent implements OnInit {
     console.log('onfocus');
   }
 
-
+  selectOption() {
+    this.optionToBeSelected = true;
+  }
 
 }
 
