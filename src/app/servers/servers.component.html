@@ -1,9 +1,21 @@
+<label>Server Name</label>
+<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+>
+
 <button class="btn btn-primary"
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add server</button>
-
+<p>{{ allowNewServer }}</p> 
 <button class="btn btn-danger"
-    (click)="onDeleteServer()">Delete server</button>
+    (click)="onDeleteServer()"
+    (contextmenu)="AlertContext()">Delete server</button>
+
+<textarea name=""
+    id="" cols="30" rows="10"
+    [disabled]="disableTextarea"></textarea>
 
 <p> {{ serverCreationStatus }} </p>
 <!-- String interpolation -->

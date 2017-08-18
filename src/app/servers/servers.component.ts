@@ -12,12 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
+  disableTextarea = false;
   serverCreationStatus = 'No server was created !';
 
-  constructor() { 
+  // constructor() { 
+  //   console.log('settimeout');  
+  //   setTimeout(() => {
+  //     this.allowNewServer = true;
+  //   }, 4000);
+  // }
+
+  constructor() {
+    console.log('settimeout');
     setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
+      console.log('settimeout');
+      this.disableTextarea = true;
+    }, 4000);
   }
 
   ngOnInit() {
@@ -30,5 +40,24 @@ export class ServersComponent implements OnInit {
   onDeleteServer() {
     this.serverCreationStatus = 'The server was deleted !'
   }
+
+  onUpdateServerName(event: any) {
+    console.log(event);
+  }
+
+  AlertContext() {
+    alert('Context menu is forbidden!');
+  }
+
+  DblClick() {
+    console.log('Double clicked');
+  }
+
+  onFocusLog() {
+    console.log('onfocus');
+  }
+
+
+
 }
 
