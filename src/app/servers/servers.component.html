@@ -1,26 +1,15 @@
 <label>Server Name</label>
-<input
+
+<input 
     type="text"
     class="form-control"
-    (input)="onUpdateServerName($event)"
->
-
+    (input)="onUpdateServerName($event)">
+    <p>{{ serverName }}</p>
+    
 <button class="btn btn-primary"
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add server</button>
-<p>{{ allowNewServer }}</p> 
-<button class="btn btn-danger"
-    (click)="onDeleteServer()"
-    (contextmenu)="AlertContext()">Delete server</button>
+    <p>{{ serverCreationStatus }}</p>
 
-<textarea name=""
-    id="" cols="30" rows="10"
-    [disabled]="disableTextarea"></textarea>
-
-<p> {{ serverCreationStatus }} </p>
-<!-- String interpolation -->
-<!-- <p>{{ allowNewServer }}</p>  -->
-<!-- Data binding -->
-<!-- <p [innerText]="allowNewServer"></p> -->
 <app-server></app-server>
 <app-server></app-server>
