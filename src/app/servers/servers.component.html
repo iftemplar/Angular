@@ -1,40 +1,15 @@
 <label>Server Name</label>
-<input
+
+<input 
     type="text"
     class="form-control"
-    (input)="onUpdateServerName($event)"
->
-
+    (input)="onUpdateServerName($event)">
+    <p>{{ serverName }}</p>
+    
 <button class="btn btn-primary"
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add server</button>
-<p>{{ allowNewServer }}</p> 
+    <p>{{ serverCreationStatus }}</p>
 
-<textarea name=""
-    id="" cols="30" rows="10"
-    [disabled]="disableTextarea"></textarea>
-
-
-
-
-<div class="checkbox">
-    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 1</label>
-    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 2</label>
-    <label><input type="checkbox" value="" [checked]="optionToBeSelected">Option 3</label>
-</div>
-<button type="button" class="btn btn-info" (click)="selectOption()">Select all options</button>
-
-
-
-
-
-
-
-
-<p> {{ serverCreationStatus }} </p>
-<!-- String interpolation -->
-<!-- <p>{{ allowNewServer }}</p>  -->
-<!-- Data binding -->
-<!-- <p [innerText]="allowNewServer"></p> -->
 <app-server></app-server>
 <app-server></app-server>

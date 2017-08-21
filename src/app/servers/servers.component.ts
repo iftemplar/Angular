@@ -7,59 +7,30 @@ import { Component, OnInit } from '@angular/core';
   // template: `
   //   <app-server></app-server>
   //   <app-server></app-server>`,
+
     templateUrl: './servers.component.html',
     styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
-  disableTextarea = false;
-  serverCreationStatus = 'No server was created !';
-  optionToBeSelected = false;
+  serverCreationStatus = 'No server was created!';
+  serverName = '';
 
-  // constructor() { 
-  //   console.log('settimeout');  
-  //   setTimeout(() => {
-  //     this.allowNewServer = true;
-  //   }, 4000);
-  // }
-
-  constructor() {
-    console.log('settimeout');
+  constructor() { 
     setTimeout(() => {
-      console.log('settimeout');
-      this.disableTextarea = true;
+      this.allowNewServer = true;
     }, 4000);
   }
 
   ngOnInit() {
   }
 
-  onCreateServer() {
-    this.serverCreationStatus = 'Server was created !';
+  onCreateServer(){
+    this.serverCreationStatus = 'Server was created!';
   }
 
-  onDeleteServer() {
-    this.serverCreationStatus = 'The server was deleted !'
-  }
-
-  onUpdateServerName(event: any) {
-    console.log(event);
-  }
-
-  AlertContext() {
-    alert('Context menu is forbidden!');
-  }
-
-  DblClick() {
-    console.log('Double clicked');
-  }
-
-  onFocusLog() {
-    console.log('onfocus');
-  }
-
-  selectOption() {
-    this.optionToBeSelected = true;
+  onUpdateServerName(event: Event){
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 
 }
